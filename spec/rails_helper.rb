@@ -92,6 +92,6 @@ RSpec.configure do |config|
   
   
   
-  config.include RequestSpecHelper, type: :request
-  # config.include ControllerSpecHelper
+  config.include RequestSpecHelper
+  config.include ControllerSpecHelper
 end
