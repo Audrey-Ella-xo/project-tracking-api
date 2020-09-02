@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Items", type: :request do
-    # Initialize the test data
-    let(:user) { create(:user) }
-    let!(:project) { create(:project, created_by: user.id) }
-    let!(:todos) { create_list(:todo, 20, project_id: project.id) }
-    let(:project_id) { project.id }
-    let!(:todo) { todos.first }
-    let!(:items) { create_list(:item, 20, todo_id: todo.id) }
-    let(:todo_id) { todo.id }
-    let(:id) { items.first.id }
-    let(:headers) { valid_headers }
+RSpec.describe 'Items', type: :request do
+  # Initialize the test data
+  let(:user) { create(:user) }
+  let!(:project) { create(:project, created_by: user.id) }
+  let!(:todos) { create_list(:todo, 20, project_id: project.id) }
+  let(:project_id) { project.id }
+  let!(:todo) { todos.first }
+  let!(:items) { create_list(:item, 20, todo_id: todo.id) }
+  let(:todo_id) { todo.id }
+  let(:id) { items.first.id }
+  let(:headers) { valid_headers }
 
   # Test suite for GET /projects/:project_id/todos/:todo_id/items
   describe 'GET /projects/:project_id/projects/:project_id/todos/:todo_id/items' do
@@ -131,5 +133,4 @@ RSpec.describe "Items", type: :request do
       expect(response).to have_http_status(204)
     end
   end
-
 end

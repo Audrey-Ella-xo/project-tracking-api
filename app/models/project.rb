@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Project < ApplicationRecord
-    # model association
+  # model association
   has_many :todos, dependent: :destroy
 
   # validations

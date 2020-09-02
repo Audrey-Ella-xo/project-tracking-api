@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module ExceptionHandler
-    # provides the more graceful `included` method
-    extend ActiveSupport::Concern
-  
-    # Define custom error subclasses - rescue catches `StandardErrors`
+  # provides the more graceful `included` method
+  extend ActiveSupport::Concern
+
+  # Define custom error subclasses - rescue catches `StandardErrors`
   class AuthenticationError < StandardError; end
   class MissingToken < StandardError; end
   class InvalidToken < StandardError; end
@@ -30,4 +32,4 @@ module ExceptionHandler
   def unauthorized_request(e)
     json_response({ message: e.message }, :unauthorized)
   end
-  end
+end
