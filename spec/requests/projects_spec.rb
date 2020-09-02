@@ -2,16 +2,16 @@ require 'rails_helper'
 
 RSpec.describe "Projects", type: :request do
 # initialize test data 
-# let(:user) { create(:user) }
-let!(:projects) { create_list(:project, 10) }
+let(:user) { create(:user) }
+let!(:projects) { create_list(:project, 10, created_by: user.id) }
 let(:project_id) { projects.first.id }
 # authorize request
-# let(:headers) { valid_headers }
+let(:headers) { valid_headers }
 
 # Test suite for GET /projects
 describe 'GET /projects' do
   # make HTTP get request before each example
-  before { get '/projects' }
+  before { get '/projects', params: {}, headers: headers }
 
   it 'returns projects' do
     # Note `json` is a custom helper to parse JSON responses
@@ -26,7 +26,7 @@ end
 
 # Test suite for GET /projects/:id
 describe 'GET /projects/:id' do
-  before { get "/projects/#{project_id}" }
+  before { get "/projects/#{project_id}", params: {}, headers: headers }
 
   context 'when the record exists' do
     it 'returns the project' do
@@ -57,11 +57,11 @@ describe 'POST /projects' do
   # valid payload
   let(:valid_attributes) do
 
-    { name: 'Learn Elm', created_by: '1' }
+    { name: 'Learn Elm', created_by: user.id.to_s }.to_json
   end
 
   context 'when the request is valid' do
-    before { post '/projects', params: valid_attributes }
+    before { post '/projects', params: valid_attributes, headers: headers }
 
     it 'creates a project' do
       expect(json['name']).to eq('Learn Elm')
@@ -73,8 +73,8 @@ describe 'POST /projects' do
   end
 
   context 'when the request is invalid' do
-    let(:invalid_attributes) { { title: nil } }
-    before { post '/projects', params: invalid_attributes }
+    let(:invalid_attributes) { { title: nil }.to_json }
+    before { post '/projects', params: invalid_attributes, headers: headers }
 
     it 'returns status code 422' do
       expect(response).to have_http_status(422)
@@ -89,10 +89,10 @@ end
 
 # Test suite for PUT /projects/:id
 describe 'PUT /projects/:id' do
-  let(:valid_attributes) { { name: 'Shopping' } }
+  let(:valid_attributes) { { name: 'Shopping' }.to_json }
 
   context 'when the record exists' do
-    before { put "/projects/#{project_id}", params: valid_attributes }
+    before { put "/projects/#{project_id}", params: valid_attributes, headers: headers }
 
     it 'updates the record' do
       expect(response.body).to be_empty
@@ -106,7 +106,7 @@ end
 
 # Test suite for DELETE /projects/:id
 describe 'DELETE /projects/:id' do
-  before { delete "/projects/#{project_id}" }
+  before { delete "/projects/#{project_id}", params: {}, headers: headers }
 
   it 'returns status code 204' do
     expect(response).to have_http_status(204)

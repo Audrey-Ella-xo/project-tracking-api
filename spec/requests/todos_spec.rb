@@ -2,16 +2,16 @@ require 'rails_helper'
 
 RSpec.describe "projects", type: :request do
 # Initialize the test data
-# let(:user) { create(:user) }
-let!(:project) { create(:project) }
+let(:user) { create(:user) }
+let!(:project) { create(:project, created_by: user.id) }
 let!(:todos) { create_list(:todo, 20, project_id: project.id) }
 let(:project_id) { project.id }
 let(:id) { todos.first.id }
-# let(:headers) { valid_headers }
+let(:headers) { valid_headers }
 
 # Test suite for GET /projects/:project_id/todos
 describe 'GET /projects/:project_id/todos' do
-  before { get "/projects/#{project_id}/todos" }
+  before { get "/projects/#{project_id}/todos", params: {}, headers: headers }
 
   context 'when project exists' do
     it 'returns status code 200' do
@@ -38,7 +38,7 @@ end
 
 # Test suite for GET /projects/:project_id/todos/:id
 describe 'GET /projects/:project_id/todos/:id' do
-  before { get "/projects/#{project_id}/todos/#{id}" }
+  before { get "/projects/#{project_id}/todos/#{id}", params: {}, headers: headers }
 
   context 'when project todo exists' do
     it 'returns status code 200' do
@@ -65,11 +65,11 @@ end
 
 # Test suite for PUT /projects/:project_id/todos
 describe 'POST /projects/:project_id/todos' do
-  let(:valid_attributes) { { title: 'Visit Narnia' } }
+  let(:valid_attributes) { { title: 'Visit Narnia' }.to_json }
 
   context 'when request attributes are valid' do
     before do 
-     post "/projects/#{project_id}/todos", params: valid_attributes 
+     post "/projects/#{project_id}/todos", params: valid_attributes, headers: headers 
     end
 
     it 'returns status code 201' do
@@ -78,7 +78,7 @@ describe 'POST /projects/:project_id/todos' do
   end
 
   context 'when an invalid request' do
-    before { post "/projects/#{project_id}/todos" }
+    before { post "/projects/#{project_id}/todos", params: {}, headers: headers }
 
     it 'returns status code 422' do
       expect(response).to have_http_status(422)
@@ -92,9 +92,9 @@ end
 
 # Test suite for PUT /projects/:project_id/todos/:id
 describe 'PUT /projects/:project_id/todos/:id' do
-  let(:valid_attributes) { { title: 'Mozart' } }
+  let(:valid_attributes) { { title: 'Mozart' }.to_json }
 
-  before { put "/projects/#{project_id}/todos/#{id}", params: valid_attributes }
+  before { put "/projects/#{project_id}/todos/#{id}", params: valid_attributes, headers: headers }
 
   context 'when todo exists' do
     it 'returns status code 204' do
@@ -122,7 +122,7 @@ end
 
 # Test suite for DELETE /projects/:id
 describe 'DELETE /projects/:id' do
-  before { delete "/projects/#{project_id}/todos/#{id}" }
+  before { delete "/projects/#{project_id}/todos/#{id}", params: {}, headers: headers }
 
   it 'returns status code 204' do
     expect(response).to have_http_status(204)
