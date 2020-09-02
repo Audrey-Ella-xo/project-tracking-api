@@ -34,7 +34,7 @@ class ProjectsController < ApplicationController
 
   def project_params
     # whitelist params
-    params.permit(:name, :description)
+    params.permit(:name, :description, :created_by)
   end
 
   def set_project
