@@ -7,4 +7,5 @@ RSpec.describe Todo, type: :model do
   # Validation test
   # ensure column name is present before saving
   it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:progress) }
 end
