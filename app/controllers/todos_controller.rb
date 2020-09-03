@@ -3,8 +3,8 @@
 class TodosController < ApplicationController
   before_action :set_project
   before_action :set_project_todo, only: %i[show update destroy]
-  before_action :check_current_user, only: %i[create update destroy]
-
+  before_action :check_current_user, only: %i[create, update, destroy]
+  skip_before_action :authorize_request, only: %i[index show]
   # GET /projects/:project_id/todos
   def index
     json_response(@project.todos)
@@ -17,8 +17,8 @@ class TodosController < ApplicationController
 
   # POST /projects/:project_id/todos
   def create
-    @project.todos.create!(todo_params)
-    json_response(@project, :created)
+    Todo.create!(todo_params)
+    json_response(Todo.last, :created)
   end
 
   # PUT /projects/:project_id/todos/:id
@@ -36,7 +36,7 @@ class TodosController < ApplicationController
   private
 
   def todo_params
-    params.permit(:title, :progress)
+    params.permit(:title, :progress, :project_id)
   end
 
   def set_project
