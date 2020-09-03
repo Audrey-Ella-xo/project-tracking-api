@@ -2,6 +2,7 @@
 
 class Project < ApplicationRecord
   # model association
+  # belongs_to :user
   has_many :todos, dependent: :destroy
 
   # validations

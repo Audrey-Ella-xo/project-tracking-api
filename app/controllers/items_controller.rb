@@ -3,6 +3,7 @@
 class ItemsController < ApplicationController
   before_action :set_todo
   before_action :set_todo_item, only: %i[show update destroy]
+  before_action :check_current_user, only: %i[create update destroy]
 
   # GET /todos/:todo_id/items
   def index
@@ -44,5 +45,9 @@ class ItemsController < ApplicationController
 
   def set_todo_item
     @item = @todo.items.find_by!(id: params[:id]) if @todo
+  end
+
+  def check_current_user
+    raise(ExceptionHandler::AuthenticationError, Message.notyou) unless current_user.id.to_s == params[:user_id]
   end
 end

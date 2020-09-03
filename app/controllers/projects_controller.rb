@@ -2,6 +2,8 @@
 
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show update destroy]
+  before_action :check_admin, only: %i[create update destroy]
+  skip_before_action :authorize_request, only: %i[index show]
 
   # GET /projects
   def index
@@ -41,5 +43,9 @@ class ProjectsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:id])
+  end
+
+  def check_admin
+    raise(ExceptionHandler::AuthenticationError, Message.notallowed) unless current_user.admin
   end
 end

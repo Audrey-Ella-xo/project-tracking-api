@@ -32,4 +32,12 @@ class Message
   def self.expired_token
     'Sorry, your token has expired. Please login to continue.'
   end
+
+  def self.notallowed
+    'Only admin users can manage Projects'
+  end
+
+  def self.notyou
+    'You can only manage your own Todos and Items'
+  end
 end

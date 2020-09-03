@@ -3,6 +3,7 @@
 class TodosController < ApplicationController
   before_action :set_project
   before_action :set_project_todo, only: %i[show update destroy]
+  before_action :check_current_user, only: %i[create update destroy]
 
   # GET /projects/:project_id/todos
   def index
@@ -44,5 +45,9 @@ class TodosController < ApplicationController
 
   def set_project_todo
     @todo = @project.todos.find_by!(id: params[:id]) if @project
+  end
+
+  def check_current_user
+    raise(ExceptionHandler::AuthenticationError, Message.notyou) unless current_user.id.to_s == params[:user_id]
   end
 end
