@@ -3,7 +3,9 @@
 class TodosController < ApplicationController
   before_action :set_project
   before_action :set_project_todo, only: %i[show update destroy]
+  # rubocop:disable Lint/PercentSymbolArray
   before_action :check_current_user, only: %i[create, update, destroy]
+  # rubocop:enable Lint/PercentSymbolArray
   skip_before_action :authorize_request, only: %i[index show]
   # GET /projects/:project_id/todos
   def index
