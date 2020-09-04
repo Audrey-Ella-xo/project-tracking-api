@@ -90,7 +90,7 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 Ruby: 2.7.0
-Rails: 5.2.4
+Rails: 6.0.3
 
 ### Setup
 
