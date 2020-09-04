@@ -13,6 +13,7 @@ AllCops:
     - "app/mailers/**/*"
     - "app/jobs/**/*"
     - "test/**/*"
+    - 'spec/**/*'
   DisplayCopNames: true
 
 Layout/LineLength:
