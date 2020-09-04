@@ -28,28 +28,28 @@
           "description": "Listing todos items",
           "link": "item/listing_todos_items.json",
           "groups": "all",
-          "route": "/projects/:project_id/todos/:todo_id/items",
+          "route": "projects/:project_id/todos/:todo_id/items",
           "method": "get"
         },
         {
-          "description": "Getting a specific item from the login user",
-          "link": "item/getting_a_specific_item_from_the_login_user.json",
+          "description": "Getting a specific item from the the todo list",
+          "link": "item/getting_a_specific_item_from_the_the_todo_list.json",
           "groups": "all",
-          "route": "/projects/:project_id/todos/:todo_id/items/:id",
+          "route": "projects/:project_id/todos/:todo_id/items/:id",
           "method": "get"
         },
         {
-          "description": "Creating a new user todo",
-          "link": "item/creating_a_new_user_todo.json",
+          "description": "Creating a new item",
+          "link": "item/creating_a_new_item.json",
           "groups": "all",
-          "route": "/projects/:project_id/todos/:todo_id/items",
+          "route": "projects/:project_id/todos/:todo_id/items",
           "method": "post"
         },
         {
-          "description": "Updating an specific user todo",
-          "link": "item/updating_an_specific_user_todo.json",
+          "description": "Updating a specific todo item.",
+          "link": "item/updating_a_specific_todo_item..json",
           "groups": "all",
-          "route": "/projects/:project_id/todos/:todo_id/items/:id",
+          "route": "projects/:project_id/todos/:todo_id/items/:id",
           "method": "put"
         }
       ]
@@ -62,28 +62,28 @@
           "description": "Listing projects",
           "link": "project/listing_projects.json",
           "groups": "all",
-          "route": "/projects",
+          "route": "projects",
           "method": "get"
         },
         {
           "description": "Getting a specific project",
           "link": "project/getting_a_specific_project.json",
           "groups": "all",
-          "route": "/projects/:id",
+          "route": "projects/:id",
           "method": "get"
         },
         {
           "description": "Creating a new project",
           "link": "project/creating_a_new_project.json",
           "groups": "all",
-          "route": "/projects",
+          "route": "projects",
           "method": "post"
         },
         {
           "description": "Updating an specific project",
           "link": "project/updating_an_specific_project.json",
           "groups": "all",
-          "route": "/projects/:id",
+          "route": "projects/:id",
           "method": "put"
         }
       ]
@@ -96,28 +96,28 @@
           "description": "Listing todos",
           "link": "todo/listing_todos.json",
           "groups": "all",
-          "route": "/projects/:project_id/todos",
+          "route": "projects/:project_id/todos",
           "method": "get"
         },
         {
           "description": "Getting a specific todo from the login user",
           "link": "todo/getting_a_specific_todo_from_the_login_user.json",
           "groups": "all",
-          "route": "/projects/:project_id/todos/:id",
+          "route": "projects/:project_id/todos/:id",
           "method": "get"
         },
         {
           "description": "Creating a new user todo",
           "link": "todo/creating_a_new_user_todo.json",
           "groups": "all",
-          "route": "/projects/:project_id/todos",
+          "route": "projects/:project_id/todos",
           "method": "post"
         },
         {
-          "description": "Updating an specific user todo",
-          "link": "todo/updating_an_specific_user_todo.json",
+          "description": "Updating a specific user todo",
+          "link": "todo/updating_a_specific_user_todo.json",
           "groups": "all",
-          "route": "/projects/:project_id/todos/:id",
+          "route": "projects/:project_id/todos/:id",
           "method": "put"
         }
       ]

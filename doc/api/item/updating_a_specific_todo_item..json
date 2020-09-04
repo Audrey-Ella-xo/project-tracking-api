@@ -2,21 +2,21 @@
   "resource": "Item",
   "resource_explanation": null,
   "http_method": "PUT",
-  "route": "/projects/:project_id/todos/:todo_id/items/:id",
-  "description": "Updating an specific user todo",
-  "explanation": "Edits a todo from the login user",
+  "route": "projects/:project_id/todos/:todo_id/items/:id",
+  "description": "Updating a specific todo item.",
+  "explanation": "Edits an item from the selected todo",
   "parameters": [
     {
       "name": "name",
-      "description": "Todo description"
+      "description": "Item name"
     },
     {
       "name": "done",
-      "description": "Amount of exercise done by the user"
+      "description": "Completion Checker"
     },
     {
       "name": "todo_id",
-      "description": "Login User"
+      "description": "Todo id"
     }
   ],
   "response_fields": [
@@ -25,7 +25,7 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "/projects/1/todos/1/items/1",
+      "request_path": "projects/1/todos/1/items/1",
       "request_body": null,
       "request_headers": {
       },
@@ -38,11 +38,11 @@
       "response_headers": {
       },
       "response_content_type": null,
-      "curl": "curl \"http://localhost:3000//projects/1/todos/1/items/1\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000/projects/1/todos/1/items/1\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     },
     {
       "request_method": "PUT",
-      "request_path": "/projects/1/todos/1/items/1",
+      "request_path": "projects/1/todos/1/items/1",
       "request_body": "{\"name\":\"Seconds\",\"done\":true}",
       "request_headers": {
       },
@@ -55,7 +55,7 @@
       "response_headers": {
       },
       "response_content_type": null,
-      "curl": "curl \"http://localhost:3000//projects/1/todos/1/items/1\" -d '{\"name\":\"Seconds\",\"done\":true}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000/projects/1/todos/1/items/1\" -d '{\"name\":\"Seconds\",\"done\":true}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

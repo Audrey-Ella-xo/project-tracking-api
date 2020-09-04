@@ -2,9 +2,9 @@
   "resource": "Todo",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "/projects/:project_id/todos",
+  "route": "projects/:project_id/todos",
   "description": "Listing todos",
-  "explanation": "List all the todos from the login user",
+  "explanation": "List all the todos from the loged user",
   "parameters": [
 
   ],
@@ -14,7 +14,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/projects/1/todos",
+      "request_path": "projects/1/todos",
       "request_body": null,
       "request_headers": {
       },
@@ -27,7 +27,7 @@
       "response_headers": {
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl -g \"http://localhost:3000//projects/1/todos\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl -g \"http://localhost:3000/projects/1/todos\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

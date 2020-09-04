@@ -1,3 +1,3 @@
 Raddocs.configure do |config|
-    config.api_name = "FySquare API Documentation"
+    config.api_name = "Project Tracking API Documentation"
 end

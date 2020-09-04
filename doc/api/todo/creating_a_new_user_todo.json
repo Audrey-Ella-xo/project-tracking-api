@@ -2,7 +2,7 @@
   "resource": "Todo",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "/projects/:project_id/todos",
+  "route": "projects/:project_id/todos",
   "description": "Creating a new user todo",
   "explanation": "Registers a new todo from the login user",
   "parameters": [
@@ -12,7 +12,7 @@
     },
     {
       "name": "progress",
-      "description": "Amount of exercise done by the user"
+      "description": "Shows progress to todo based on ticked off todo  items"
     },
     {
       "name": "project_id",
@@ -25,7 +25,7 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "/projects/1/todos",
+      "request_path": "projects/1/todos",
       "request_body": null,
       "request_headers": {
       },
@@ -38,11 +38,11 @@
       "response_headers": {
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000//projects/1/todos\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000/projects/1/todos\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     },
     {
       "request_method": "POST",
-      "request_path": "/projects/1/todos",
+      "request_path": "projects/1/todos",
       "request_body": "{\"title\":\"Repetitions\",\"progress\":12}",
       "request_headers": {
       },
@@ -55,7 +55,7 @@
       "response_headers": {
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://localhost:3000//projects/1/todos\" -d '{\"title\":\"Repetitions\",\"progress\":12}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000/projects/1/todos\" -d '{\"title\":\"Repetitions\",\"progress\":12}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

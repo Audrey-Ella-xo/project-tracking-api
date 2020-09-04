@@ -2,7 +2,7 @@
   "resource": "Project",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "/projects",
+  "route": "projects",
   "description": "Listing projects",
   "explanation": "List all the projects in the system no authentication is needed",
   "parameters": [
@@ -14,7 +14,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/projects",
+      "request_path": "projects",
       "request_body": null,
       "request_headers": {
       },
@@ -27,7 +27,7 @@
       "response_headers": {
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl -g \"http://localhost:3000//projects\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl -g \"http://localhost:3000/projects\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }
