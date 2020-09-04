@@ -7,7 +7,7 @@ resource 'Item', acceptance: true do
   let!(:todo) { todos.first }
   let!(:items) { create_list(:item, 20, todo_id: todo.id) }
   before do
-    header 'Authorization', token_generator(project.id)
+    header 'Authorization', token_generator(user.id)
     header 'Content-Type', 'application/json'
   end
 

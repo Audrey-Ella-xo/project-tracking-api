@@ -28,14 +28,17 @@
       "request_path": "projects/1/todos/1/items",
       "request_body": null,
       "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
       },
       "request_query_parameters": {
       },
       "request_content_type": "application/json",
       "response_status": 422,
       "response_status_text": "Unprocessable Entity",
-      "response_body": "[binary data]",
+      "response_body": "{\n  \"message\": \"Validation failed: Name can't be blank\"\n}",
       "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": "curl \"http://localhost:3000/projects/1/todos/1/items\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
@@ -45,14 +48,17 @@
       "request_path": "projects/1/todos/1/items",
       "request_body": "{\"name\":\"Repetitions\",\"done\":false}",
       "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
       },
       "request_query_parameters": {
       },
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "[binary data]",
+      "response_body": "{\n  \"id\": 1,\n  \"title\": \"sunt\",\n  \"progress\": 10,\n  \"project_id\": 1,\n  \"created_at\": \"2020-09-04T20:57:52.267Z\",\n  \"updated_at\": \"2020-09-04T20:57:52.267Z\",\n  \"project\": {\n    \"id\": 1,\n    \"name\": \"t\",\n    \"description\": \"b\",\n    \"created_by\": \"1\",\n    \"created_at\": \"2020-09-04T20:57:52.265Z\",\n    \"updated_at\": \"2020-09-04T20:57:52.265Z\"\n  },\n  \"items\": [\n    {\n      \"id\": 1,\n      \"name\": \"f\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.313Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.313Z\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"9\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.316Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.316Z\"\n    },\n    {\n      \"id\": 3,\n      \"name\": \"5\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.318Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.318Z\"\n    },\n    {\n      \"id\": 4,\n      \"name\": \"t\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.320Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.320Z\"\n    },\n    {\n      \"id\": 5,\n      \"name\": \"v\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.322Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.322Z\"\n    },\n    {\n      \"id\": 6,\n      \"name\": \"l\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.325Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.325Z\"\n    },\n    {\n      \"id\": 7,\n      \"name\": \"x\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.327Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.327Z\"\n    },\n    {\n      \"id\": 8,\n      \"name\": \"0\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.329Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.329Z\"\n    },\n    {\n      \"id\": 9,\n      \"name\": \"p\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.332Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.332Z\"\n    },\n    {\n      \"id\": 10,\n      \"name\": \"b\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.334Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.334Z\"\n    },\n    {\n      \"id\": 11,\n      \"name\": \"j\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.336Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.336Z\"\n    },\n    {\n      \"id\": 12,\n      \"name\": \"b\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.338Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.338Z\"\n    },\n    {\n      \"id\": 13,\n      \"name\": \"q\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.341Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.341Z\"\n    },\n    {\n      \"id\": 14,\n      \"name\": \"4\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.343Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.343Z\"\n    },\n    {\n      \"id\": 15,\n      \"name\": \"a\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.345Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.345Z\"\n    },\n    {\n      \"id\": 16,\n      \"name\": \"f\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.346Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.346Z\"\n    },\n    {\n      \"id\": 17,\n      \"name\": \"3\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.348Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.348Z\"\n    },\n    {\n      \"id\": 18,\n      \"name\": \"1\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.350Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.350Z\"\n    },\n    {\n      \"id\": 19,\n      \"name\": \"0\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.353Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.353Z\"\n    },\n    {\n      \"id\": 20,\n      \"name\": \"6\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.355Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.355Z\"\n    },\n    {\n      \"id\": 21,\n      \"name\": \"Repetitions\",\n      \"done\": false,\n      \"todo_id\": 1,\n      \"created_at\": \"2020-09-04T20:57:52.371Z\",\n      \"updated_at\": \"2020-09-04T20:57:52.371Z\"\n    }\n  ]\n}",
       "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": "curl \"http://localhost:3000/projects/1/todos/1/items\" -d '{\"name\":\"Repetitions\",\"done\":false}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""

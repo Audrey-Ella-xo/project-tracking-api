@@ -28,6 +28,8 @@
       "request_path": "projects/1/todos/1",
       "request_body": null,
       "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
       },
       "request_query_parameters": {
       },
@@ -45,6 +47,8 @@
       "request_path": "projects/1/todos/1",
       "request_body": "{\"title\":\"Seconds\",\"progress\":60}",
       "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
       },
       "request_query_parameters": {
       },
