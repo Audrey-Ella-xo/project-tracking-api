@@ -81,7 +81,7 @@ This is the final Capstone project of the Microverse Curriculum.
 
 ### Documentation
 
-The documentation was built using raddocs and swagger
+The documentation was built using raddocs.
 
 ### Getting Started
 
