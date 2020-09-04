@@ -58,11 +58,14 @@ RSpec.describe 'Projects', type: :request do
   describe 'POST /projects' do
     # valid payload
     let(:valid_attributes) do
-      { name: 'Learn Elm', created_by: user.id.to_s }.to_json
+      { name: 'Learn Elm', description: 'Something', created_by: user.id.to_s }.to_json
     end
 
     context 'when the request is valid' do
-      before { post '/projects', params: valid_attributes, headers: headers }
+      before do 
+        user.to_admin
+        post '/projects', params: valid_attributes, headers: headers 
+      end
 
       it 'creates a project' do
         expect(json['name']).to eq('Learn Elm')
@@ -74,8 +77,11 @@ RSpec.describe 'Projects', type: :request do
     end
 
     context 'when the request is invalid' do
-      let(:invalid_attributes) { { title: nil }.to_json }
-      before { post '/projects', params: invalid_attributes, headers: headers }
+      let(:invalid_attributes) { { name: nil }.to_json }
+      before do
+        user.to_admin
+        post '/projects', params: invalid_attributes, headers: headers 
+      end
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -90,11 +96,14 @@ RSpec.describe 'Projects', type: :request do
 
   # Test suite for PUT /projects/:id
   describe 'PUT /projects/:id' do
-    let(:valid_attributes) { { name: 'Shopping' }.to_json }
+    let(:valid_attributes) { { name: 'Shopping', description: 'Something' }.to_json }
 
     context 'when the record exists' do
-      before { put "/projects/#{project_id}", params: valid_attributes, headers: headers }
-
+      before do
+        user.to_admin
+        put "/projects/#{project_id}", params: valid_attributes, headers: headers 
+      end
+      
       it 'updates the record' do
         expect(response.body).to be_empty
       end
@@ -107,8 +116,11 @@ RSpec.describe 'Projects', type: :request do
 
   # Test suite for DELETE /projects/:id
   describe 'DELETE /projects/:id' do
-    before { delete "/projects/#{project_id}", params: {}, headers: headers }
-
+    before do
+      user.to_admin
+      delete "/projects/#{project_id}", params: {}, headers: headers 
+    end
+    
     it 'returns status code 204' do
       expect(response).to have_http_status(204)
     end

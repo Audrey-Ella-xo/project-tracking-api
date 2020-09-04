@@ -67,7 +67,7 @@ RSpec.describe 'projects', type: :request do
 
   # Test suite for PUT /projects/:project_id/todos
   describe 'POST /projects/:project_id/todos' do
-    let(:valid_attributes) { { title: 'Visit Narnia' }.to_json }
+    let(:valid_attributes) { { title: 'Visit Narnia', progress: 10 }.to_json }
 
     context 'when request attributes are valid' do
       before do
@@ -94,7 +94,7 @@ RSpec.describe 'projects', type: :request do
 
   # Test suite for PUT /projects/:project_id/todos/:id
   describe 'PUT /projects/:project_id/todos/:id' do
-    let(:valid_attributes) { { title: 'Mozart' }.to_json }
+    let(:valid_attributes) { { title: 'Mozart', progress: 20 }.to_json }
 
     before { put "/projects/#{project_id}/todos/#{id}", params: valid_attributes, headers: headers }
 
@@ -126,8 +126,8 @@ RSpec.describe 'projects', type: :request do
   describe 'DELETE /projects/:id' do
     before { delete "/projects/#{project_id}/todos/#{id}", params: {}, headers: headers }
 
-    it 'returns status code 204' do
-      expect(response).to have_http_status(204)
+    it 'returns status code 401' do
+      expect(response).to have_http_status(401)
     end
   end
 end
