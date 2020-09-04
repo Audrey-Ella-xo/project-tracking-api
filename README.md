@@ -62,15 +62,11 @@
 
 ![screenshot](app/assets/images/project-index.png)
 
-This is a tracker API, and has been given an individual theme to keep track of workout todos of the login projects, also only the administrator projects can manage the projects.
+This is a tracker API, and has been given an individual theme to keep track of item todos of the projects, created by a loged in user. Only the administrator can manage the projects.
 
 This is the final Capstone project of the Microverse Curriculum.
 
 ### Documentation
-
-Watch the walkthrough video to see how to use it in your computer
-
-https://www.loom.com/share/1fa671b5e0584f3f82b0c27e9640cc54
 
 The documentation was built using raddocs and swagger
 
@@ -150,7 +146,7 @@ $ http :3000/auth/login email=audrey@email.com password=foobar
 Finally we'll create a new project this way (paste the auth_token in the Authorization header)
 
 ```bash
-$ http :3000/projects name=Squats user_id=1 \
+$ http :3000/projects name=Squats description=Squating created_by='1' \
 Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTEzMzMzOTl9.XLb1MX7E4293U6GzUi_lFxxBmAMcAZpcmapO7h8X92E'
 ```
 ![screenshot](app/assets/images/project-index1.png)
@@ -193,7 +189,7 @@ $ http :3000/auth/login email=audrey@email.com password=foobar
 Now we'll paste it in the Authentication header for creating todo
 
 ```bash
-$ http :3000/projects/2/todos description=Repetitions amount=10 project_id=1 \
+$ http :3000/projects/50/todos title=petitions progress=10 \
 Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTQ0OTE0Nzd9.QkhAKA-Oft6reyvCw5tGHgLkD6bRDpsWb_iKX8tef6s'
 ```
 ![screenshot](app/assets/images/todo-creation.png)
@@ -235,7 +231,7 @@ $ http :3000/auth/login email=audrey@email.com password=foobar
 Now we'll paste it in the Authentication header for creating todo-items
 
 ```bash
-$ http :3000/projects/2/todos description=Repetitions amount=10 project_id=1 \
+$ http :3000/projects/50/todos/57/items name=yetitions done=false\
 Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTQ0OTE0Nzd9.QkhAKA-Oft6reyvCw5tGHgLkD6bRDpsWb_iKX8tef6s'
 ```
 ![screenshot](app/assets/images/todo-item-creation.png)
@@ -265,7 +261,7 @@ $ http :3000/projects/50/todos/57/items/55 Authorization:'eyJhbGciOiJIUzI1NiJ9.e
 to run the test cases do:
 
 ```
-rspec spec/ --exclude-pattern integration/*
+bundle exec rspec
 ```
 
 to update the raddocs documentation run:
@@ -274,19 +270,11 @@ to update the raddocs documentation run:
 rake docs:generate
 ```
 
-to update the swagger documentation run:
-
-```
-rake rswag:specs:swaggerize
-```
-
 - and go to localhost:3000/api_docs with your browser to get to the raddocs documentation
-- or go to localhost:3000/api-docs with your browser to get to the swagger documentation
 
 ### Deployment
 
 - The project raddocs documentation was deployed in [Heroku](https://extracker-api.herokuapp.com/api_docs/) 
-- The project swagger documentation was deployed in [Heroku](https://extracker-api.herokuapp.com/api-docs/) 
 
 ### Built With
 This project was built using these technologies.
@@ -295,7 +283,6 @@ This project was built using these technologies.
 * Rspec
 * rspec_api_documentation
 * raddocs
-* swagger
 * Rubocop
 * Ubuntu 18.4+
 * Stickler
@@ -328,7 +315,7 @@ Give a ⭐️ if you like this project!
 * [Austin Kabiru](https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one)
 * [A D Vishnu Prasad](https://advishnuprasad.com/blog/2016/02/07/api-docs-using-rspecs/)
 * [How to document REST APIs with Swagger and Ruby on Rails](https://medium.com/@sushildamdhere/how-to-document-rest-apis-with-swagger-and-ruby-on-rails-ae4e13177f5d)
-* [Versioning a Rails API](https://chriskottom.com/blog/2017/04/versioning-a-rails-api/)
+
 
 
 <!-- LICENSE -->
