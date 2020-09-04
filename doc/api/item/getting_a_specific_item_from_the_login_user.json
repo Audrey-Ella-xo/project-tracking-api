@@ -1,0 +1,36 @@
+{
+  "resource": "Item",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/projects/:project_id/todos/:todo_id/items/:id",
+  "description": "Getting a specific item from the login user",
+  "explanation": "Shows a specific item from the login user",
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/projects/1/todos/1/items/1",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[binary data]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl -g \"http://fysquare.dev/projects/1/todos/1/items/1\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

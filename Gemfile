@@ -27,6 +27,9 @@ gem 'active_model_serializers'
 gem 'will_paginate'
 gem 'faker'
 gem 'rubocop'
+gem 'rswag'
+gem 'rspec_api_documentation'
+gem 'raddocs'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'

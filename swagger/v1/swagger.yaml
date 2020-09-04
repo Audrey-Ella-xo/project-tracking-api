@@ -1,0 +1,38 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/projects":
+    get:
+      summary: List all projects
+      tags:
+      - Project
+      responses:
+        '200':
+          description: Shows all projects no authentication is needed
+          content: {}
+  "/projects/{id}":
+    get:
+      summary: List an specific Project
+      tags:
+      - Project
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Shows an specific Project no authentication is needed
+          content: {}
+        '401':
+          description: invalid credentials
+          content: {}
+servers:
+- url: https://localhost:3000
+  variables:
+    defaultHost:
+      default: https://localhost:3000
