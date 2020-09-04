@@ -72,10 +72,10 @@ This is the final Capstone project of the Microverse Curriculum.
 
 | TIMELINE    |  TODO  |  DESCRIPTION  |    OUTCOME   |  STATUS   |
 | :---        | :----: |    :----:     |    :----:    |  :----:   |
-| Day 1       | Learn Rails API framework | Obtain leads, knowledge and the syntax necessary for the development of the API.| Understanding the API framework.|&#9745;|
-| Day 2       | API Design | Design the API by defining the topic and objective of the API, the API mechanics, the different entities involved in the API (player, enemies, platforms, levels, etc.), the user interactions and finally the different screens (Phaser scenes) that needs implementation. |  Set objectives for remaining days. |&#9745;|
-| Day 3       |API Development| API Development following the defined design|  API Logic             |&#9745;|
-| Day 4       |API Development| API Development following the defined design|  API Interface         |&#9745;|
+| Day 1       | Learn Rails API framework | Obtain leads, knowledge and the syntax necessary for the development of the API.| Understanding Rails API framework.|&#9745;|
+| Day 2       | API Design | Design the API by designing the Entity relationship, set up the repository and tools, start building the basic functionality of the project and test the basics using Postman |  Set objectives for remaining days. |&#9745;|
+| Day 3       |API Development| API Development following the defined design, as well as add user authentication and unit testing|  API Logic             |&#9745;|
+| Day 4       |API Testing| Do a thorough Test of the completed API |  API Testing        |&#9745;|
 | Day 5       |API Documentation| API Documentation following the defined design|  API Documentation |&#9745;|
 ---
 
