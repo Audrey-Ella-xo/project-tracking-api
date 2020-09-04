@@ -43,6 +43,7 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
+  * [API Development Guidelines and Timelines](#api-development-guidelines-and-timelines)
   * [Documentation](#documentation)
   * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
@@ -65,6 +66,18 @@
 This is a tracker API, and has been given an individual theme to keep track of item todos of the projects, created by a loged in user. Only the administrator can manage the projects.
 
 This is the final Capstone project of the Microverse Curriculum.
+
+---
+### API Development Guidelines and Timelines
+
+| TIMELINE    |  TODO  |  DESCRIPTION  |    OUTCOME   |  STATUS   |
+| :---        | :----: |    :----:     |    :----:    |  :----:   |
+| Day 1       | Learn Rails API framework | Obtain leads, knowledge and the syntax necessary for the development of the API.| Understanding the API framework.|&#9745;|
+| Day 2       | API Design | Design the API by defining the topic and objective of the API, the API mechanics, the different entities involved in the API (player, enemies, platforms, levels, etc.), the user interactions and finally the different screens (Phaser scenes) that needs implementation. |  Set objectives for remaining days. |&#9745;|
+| Day 3       |API Development| API Development following the defined design|  API Logic             |&#9745;|
+| Day 4       |API Development| API Development following the defined design|  API Interface         |&#9745;|
+| Day 5       |API Documentation| API Documentation following the defined design|  API Documentation |&#9745;|
+---
 
 ### Documentation
 
