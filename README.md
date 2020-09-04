@@ -287,7 +287,7 @@ rake docs:generate
 
 ### Deployment
 
-- The project raddocs documentation was deployed in [Heroku](https://extracker-api.herokuapp.com/api_docs/) 
+- The project raddocs documentation was deployed in [Heroku](https://boiling-cove-53950.herokuapp.com/api_docs/) 
 
 ### Built With
 This project was built using these technologies.
