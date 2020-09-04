@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'Projects', type: :request do
@@ -62,9 +60,9 @@ RSpec.describe 'Projects', type: :request do
     end
 
     context 'when the request is valid' do
-      before do 
+      before do
         user.to_admin
-        post '/projects', params: valid_attributes, headers: headers 
+        post '/projects', params: valid_attributes, headers: headers
       end
 
       it 'creates a project' do
@@ -80,7 +78,7 @@ RSpec.describe 'Projects', type: :request do
       let(:invalid_attributes) { { name: nil }.to_json }
       before do
         user.to_admin
-        post '/projects', params: invalid_attributes, headers: headers 
+        post '/projects', params: invalid_attributes, headers: headers
       end
 
       it 'returns status code 422' do
@@ -101,9 +99,9 @@ RSpec.describe 'Projects', type: :request do
     context 'when the record exists' do
       before do
         user.to_admin
-        put "/projects/#{project_id}", params: valid_attributes, headers: headers 
+        put "/projects/#{project_id}", params: valid_attributes, headers: headers
       end
-      
+
       it 'updates the record' do
         expect(response.body).to be_empty
       end
@@ -118,9 +116,9 @@ RSpec.describe 'Projects', type: :request do
   describe 'DELETE /projects/:id' do
     before do
       user.to_admin
-      delete "/projects/#{project_id}", params: {}, headers: headers 
+      delete "/projects/#{project_id}", params: {}, headers: headers
     end
-    
+
     it 'returns status code 204' do
       expect(response).to have_http_status(204)
     end

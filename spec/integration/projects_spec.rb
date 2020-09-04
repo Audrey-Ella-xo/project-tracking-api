@@ -1,6 +1,4 @@
 # require 'swagger_helper'
-# # rubocop:disable RSpec/EmptyExampleGroup
-# # rubocop:disable RSpec/DescribeClass
 # describe 'Project API' do
 #   path '/projects' do
 #     get 'List all projects' do

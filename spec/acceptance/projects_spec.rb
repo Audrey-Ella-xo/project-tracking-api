@@ -3,7 +3,7 @@ require 'acceptance_helper'
 resource 'Project', acceptance: true do
   let!(:user) { create(:user) }
   let!(:projects) { create_list(:project, 10, created_by: user.id) }
-#   let(:project_id) { projects.first.id }
+  #   let(:project_id) { projects.first.id }
   before do
     header 'Content-Type', 'application/json'
     header 'Authorization', token_generator(user.id)

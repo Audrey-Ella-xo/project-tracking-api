@@ -1,7 +1,7 @@
 require 'acceptance_helper'
 
 resource 'Todo', acceptance: true do
-    let(:user) { create(:user) }
+  let(:user) { create(:user) }
   let!(:project) { create(:project, created_by: user.id) }
   let!(:todos) { create_list(:todo, 20, project_id: project.id) }
   before do
@@ -33,7 +33,7 @@ resource 'Todo', acceptance: true do
     parameter :title, 'Todo description'
     parameter :progress, 'Shows progress to todo based on ticked off todo  items'
     parameter :project_id, 'Login User'
-   
+
     example_request 'Creating a new user todo' do
       explanation 'Registers a new todo from the login user'
       do_request(title: 'Repetitions', progress: 12, project_id: project.id)

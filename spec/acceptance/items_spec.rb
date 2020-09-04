@@ -1,7 +1,7 @@
 require 'acceptance_helper'
 
 resource 'Item', acceptance: true do
-    let(:user) { create(:user) }
+  let(:user) { create(:user) }
   let!(:project) { create(:project, created_by: user.id) }
   let!(:todos) { create_list(:todo, 20, project_id: project.id) }
   let!(:todo) { todos.first }
@@ -38,7 +38,7 @@ resource 'Item', acceptance: true do
     parameter :name, 'Item name'
     parameter :done, 'Completion Checker'
     parameter :todo_id, 'Todo id'
-   
+
     example_request 'Creating a new item' do
       explanation 'Adds a new item to the selected todo'
       do_request(name: 'Repetitions', done: false, todo_id: todo.id)
