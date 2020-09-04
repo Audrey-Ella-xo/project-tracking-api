@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class TodosController < ApplicationController
   before_action :set_project
   before_action :set_project_todo, only: %i[show update destroy]

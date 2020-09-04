@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show update destroy]
   before_action :check_admin, only: %i[create update destroy]

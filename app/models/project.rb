@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Project < ApplicationRecord
   # model association
   # belongs_to :user
