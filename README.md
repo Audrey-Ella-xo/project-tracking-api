@@ -155,6 +155,12 @@ Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTEzMzMzOTl9.XLb
 ```
 ![screenshot](app/assets/images/project-index1.png)
 
+#### Non-admin Project Creation
+
+If a non admin user attempts to create, update or destroy a project, they get the following error
+
+![screenshot](app/assets/images/non-admin-error.png)
+
 #### Projects index
 
 To see all the projects created in the database you don't need to be logged in just type the following command
@@ -191,6 +197,12 @@ $ http :3000/projects/2/todos description=Repetitions amount=10 project_id=1 \
 Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTQ0OTE0Nzd9.QkhAKA-Oft6reyvCw5tGHgLkD6bRDpsWb_iKX8tef6s'
 ```
 ![screenshot](app/assets/images/todo-creation.png)
+
+#### Wrong user Creation
+
+If a user attempts to modify a todo item or todo that they don't own, they get the following error
+
+![screenshot](app/assets/images/wrong-user-todo-creation.png)
 
 #### All Todos
 
