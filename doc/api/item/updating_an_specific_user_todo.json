@@ -28,8 +28,6 @@
       "request_path": "/projects/1/todos/1/items/1",
       "request_body": null,
       "request_headers": {
-        "Content-Type": "application/json",
-        "Host": "example.org"
       },
       "request_query_parameters": {
       },
@@ -40,15 +38,13 @@
       "response_headers": {
       },
       "response_content_type": null,
-      "curl": "curl \"http://fysquare.dev/projects/1/todos/1/items/1\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000//projects/1/todos/1/items/1\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     },
     {
       "request_method": "PUT",
       "request_path": "/projects/1/todos/1/items/1",
       "request_body": "{\"name\":\"Seconds\",\"done\":true}",
       "request_headers": {
-        "Content-Type": "application/json",
-        "Host": "example.org"
       },
       "request_query_parameters": {
       },
@@ -59,7 +55,7 @@
       "response_headers": {
       },
       "response_content_type": null,
-      "curl": "curl \"http://fysquare.dev/projects/1/todos/1/items/1\" -d '{\"name\":\"Seconds\",\"done\":true}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://localhost:3000//projects/1/todos/1/items/1\" -d '{\"name\":\"Seconds\",\"done\":true}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }
