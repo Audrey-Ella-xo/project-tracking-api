@@ -1,0 +1,67 @@
+{
+  "resource": "Todo",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "projects/:project_id/todos",
+  "description": "Creating a new user todo",
+  "explanation": "Registers a new todo from the login user",
+  "parameters": [
+    {
+      "name": "title",
+      "description": "Todo description"
+    },
+    {
+      "name": "progress",
+      "description": "Shows progress to todo based on ticked off todo  items"
+    },
+    {
+      "name": "project_id",
+      "description": "Login User"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "projects/1/todos",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"message\": \"Validation failed: Title can't be blank, Progress can't be blank\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/projects/1/todos\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    },
+    {
+      "request_method": "POST",
+      "request_path": "projects/1/todos",
+      "request_body": "{\"title\":\"Repetitions\",\"progress\":12}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"id\": 21,\n  \"title\": \"Repetitions\",\n  \"progress\": 12,\n  \"project_id\": 1,\n  \"created_at\": \"2020-09-04T20:57:52.863Z\",\n  \"updated_at\": \"2020-09-04T20:57:52.863Z\",\n  \"project\": {\n    \"id\": 1,\n    \"name\": \"f\",\n    \"description\": \"n\",\n    \"created_by\": \"1\",\n    \"created_at\": \"2020-09-04T20:57:52.798Z\",\n    \"updated_at\": \"2020-09-04T20:57:52.798Z\"\n  },\n  \"items\": [\n\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/projects/1/todos\" -d '{\"title\":\"Repetitions\",\"progress\":12}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

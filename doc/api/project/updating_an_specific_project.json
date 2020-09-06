@@ -1,0 +1,65 @@
+{
+  "resource": "Project",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "projects/:id",
+  "description": "Updating an specific project",
+  "explanation": "Updates a new project requires an admin user to be logged in",
+  "parameters": [
+    {
+      "name": "name",
+      "description": "Project name"
+    },
+    {
+      "name": "created_by",
+      "description": "Admin User id"
+    },
+    {
+      "name": "description",
+      "description": "Project description"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "projects/1",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://localhost:3000/projects/1\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    },
+    {
+      "request_method": "PUT",
+      "request_path": "projects/1",
+      "request_body": "{\"name\":\"Push-ups\",\"description\":\"Pushing up\",\"created_by\":\"1\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://localhost:3000/projects/1\" -d '{\"name\":\"Push-ups\",\"description\":\"Pushing up\",\"created_by\":\"1\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}
